@@ -1,0 +1,10 @@
+{"compare" :[
+  {
+    "url": "http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",
+    "name": "Frozen"
+  },
+  {
+    "url": "http://www.omdbapi.com/?t=terminator&y=&plot=short&r=json",
+    "name": "Terminator"
+  }]
+}
