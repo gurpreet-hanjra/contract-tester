@@ -103,6 +103,12 @@ function readRecordedFile(filename) {
 }
 
 function match() {
+    //console.log('match:: ', obj1, obj2);
+
+    if (obj2 === undefined) {
+      throw new Error('No recorded data found.');
+    };
+
     var objectsToCompare = [sanitize(obj1, 'compare'), sanitize(obj2, 'compareTo')];
     //console.log(objectsToCompare);
 
