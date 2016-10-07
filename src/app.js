@@ -2,6 +2,8 @@ const request = require('request');
 const fs = require('fs');
 const compare = require('json-structure-diff').compareJSONObjects;
 
+const Utils = require('./utils')
+
 // holds all api endpoints //
 var endpoints;
 // holds object to compare temporarily //
@@ -66,13 +68,6 @@ function recordFiles(endpoint) {
             console.log('error', error);
         }
     });
-
-}
-
-// append timestamp if required //
-function timestamp() {
-    var date = new Date();
-    return date.getDate() + '-' + date.getMonth() + '-' + date.getUTCFullYear();
 }
 
 // compare the JSON //
@@ -109,7 +104,7 @@ function match() {
       throw new Error('No recorded data found.');
     };
 
-    var objectsToCompare = [sanitize(obj1, 'compare'), sanitize(obj2, 'compareTo')];
+    var objectsToCompare = [Utils.sanitize(obj1, 'compare'), Utils.sanitize(obj2, 'compareTo')];
     //console.log(objectsToCompare);
 
     var errors = compare(objectsToCompare);
@@ -117,29 +112,12 @@ function match() {
     if (errors !== null) {
         console.log(errors.length + ' problem(s), grr!');
         console.log(errors);
-        //var msg = "'" + filter(errors[0].parent) + "' mismatch.";
-        //throw new Error(msg);
+        var msg = "'" + Utils.filter(errors[0].parent) + "' mismatch.";
+        throw new Error(msg);
     } else {
         console.log('no problem(s), yay!');
     }
 }
 
-function filter(str) {
-    var arr = str.split(".");
-    return arr[arr.length - 1];
-}
-
-function sanitize(obj, name) {
-    var o = {
-        parent: name
-    }
-
-    var content = {
-        content: JSON.parse(obj)
-    }
-
-    return Object.assign(o, content);
-}
-
-//init();
-init('play');
+init();
+//init('play');
