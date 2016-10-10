@@ -2,7 +2,10 @@ const request = require('request');
 const fs = require('fs');
 const compare = require('json-structure-diff').compareJSONObjects;
 
-const Utils = require('./utils')
+const Utils = require('./utils');
+
+const mode = process.env.NODE_MODE;
+//console.log("==>", mode);
 
 // holds all api endpoints //
 var endpoints;
@@ -10,8 +13,9 @@ var endpoints;
 var obj1,
     obj2;
 
-// init function,
-function init(mode) {
+function init() {
+
+    //console.log(mode);
 
     // set mode based on input //
     mode = mode || "record";
@@ -115,9 +119,14 @@ function match() {
         var msg = "'" + Utils.filter(errors[0].parent) + "' mismatch.";
         throw new Error(msg);
     } else {
-        console.log('no problem(s), yay!');
+        console.log(`no problem(s), yay!`);
     }
 }
 
 init();
-//init('play');
+
+function hello() {
+  console.log('hello!');
+}
+
+module.exports = hello;

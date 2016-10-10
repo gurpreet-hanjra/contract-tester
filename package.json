@@ -1,11 +1,13 @@
 {
-  "name": "contract-tester",
-  "version": "1.0.0",
-  "description": "Contractor tester to make real http calls to backend, records and then plays it.",
+  "name": "dev-contract-test",
+  "version": "0.0.1",
+  "description": "Contract test to make real http calls to backend, records and then plays it.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "start:record": "NODE_MODE=record node src/app.js",
+    "start:play": "NODE_MODE=play node src/app.js"
   },
   "repository": {
     "type": "git",
