@@ -2,27 +2,28 @@
 
 Tool to do contract testing from frontend perspective. 
 
-## Installation
+# Installation
 
 `npm install dev-contract-test`
 
-### Require the module
+## Require the module
 
 `const contract = require('dev-contract-test');`
 
-### Add confi`const config = {
- apis :[
+## Add configuration
+`const config = {
+  apis :[
       {
         "url": "http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",        
         "name": "Frozen"
       }
 }`
 
-### call the method 
+## call the method 
 
 `contract.validateContract(config);`
 
-### options
+## options
 
 Force to record the response, irrespective of time
 `contract.validateContract(config, true);`
