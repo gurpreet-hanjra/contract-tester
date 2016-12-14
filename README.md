@@ -25,7 +25,9 @@ Tool to do contract testing from frontend perspective.
 
 ## options
 
-Force to record the response, irrespective of time
+Force to record the response, irrespective of when it was recorded. Frequency of recording is once in a day.
+
+
 `contract.validateContract(config, true);`
 
 ## Why contract testing?
@@ -68,7 +70,9 @@ But when schema changed -
   "YearOfRelease":"2013"
 }
 
-from 'Year' to 'YearOfRelease', things BROKE.
+from 'Year' to 'YearOfRelease', error will be thrown -
+
+`Error: 'Year' mismatch.`
 
 
 
