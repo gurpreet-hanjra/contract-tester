@@ -1,11 +1,11 @@
 {
   "name": "dev-contract-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Contract test to make real http calls to backend, records and then plays it.",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",
+    "start": "NODE_MODE=debug node src/app.js",
     "start:record": "NODE_MODE=record node src/app.js",
     "start:play": "NODE_MODE=play node src/app.js"
   },
@@ -13,10 +13,25 @@
     "type": "git",
     "url": "git+https://github.com/gurpreet-hanjra/contract-tester.git"
   },
-  "author": "Gurpreet Singh Hanjra",
+  "author": {
+    "name": "Gurpreet Singh Hanjra"
+  },
   "license": "ISC",
   "dependencies": {
+    "date-fns": "^1.18.0",
     "json-structure-diff": "0.0.2",
-    "request": "^2.75.0"
-  }
+    "node-persist": "^2.0.7",
+    "request": "^2.75.0",
+    "save": "^2.3.0"
+  },
+  "readme": "# contract-tester\n\nTool to do contract testing from Front-end perspective. \n\n## Why contract testing?\n\nWith rise of popular Javascript frameworks like Angular, React, Ember and more. Single page applications work with REST backend over JSON. \nAnd there is always a chance that something time to time changed from backend, be it part of change in functionality, refactoring or any other reason.\n \nFor example: \n\nAs a front-end developer, your frontend app consumes JSON exposed by REST api. JSON schema as contract is in agreement between frontend and backend, and app is working just fine.\nBut suddenly, for some reason the frontend app is behaving wierd. Data in your app/component is not rendering properly or not rendering at all. But you havn't changed a bit in your code.\nIs this due to something changed in api from backend?\n\nHere comes the contract-tester to rescue.\n\n## How does it works?\n\ncontract tester works in 2 modes - \n\n1. Record - Records the JSON from backend api and saves it as physcial JSON file.\n2. Play - Compares the JSON saved (that worked fine) with the api now (that has something changed).\n\nIn case of discrepancies, tool with throw error and notifies where mismatch is.\n\n## Example?\n\nThis is when things worked - \n\n{\n  \"Title\":\"Frozen\",\n  \"Year\":\"2013\"\n}\n\nBut when schema changed -\n\n{\n  \"Title\":\"Frozen\",\n  \"YearOfRelease\":\"2013\"\n}\n\nfrom 'Year' to 'YearOfRelease', things BROKE.\n\n\n\n",
+  "readmeFilename": "README.md",
+  "gitHead": "2572973fbce6c4aa6299464f538992c4cfdba8b2",
+  "bugs": {
+    "url": "https://github.com/gurpreet-hanjra/contract-tester/issues"
+  },
+  "homepage": "https://github.com/gurpreet-hanjra/contract-tester#readme",
+  "_id": "dev-contract-test@0.0.1",
+  "_shasum": "8ceaa4a7853758342feb08241138c72009959052",
+  "_from": "dev-contract-test@latest"
 }

@@ -13,7 +13,21 @@ const Utils = {
       }
 
       return Object.assign(o, content);
-  }
+  },
+  defaultConfig:
+    {
+      frequency: "daily",
+      last_recorded: "NA",
+      apis :[
+        {
+          "url": "http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",
+          "name": "Frozen"
+        },
+        {
+          "url": "http://www.omdbapi.com/?t=terminator&y=&plot=short&r=json",
+          "name": "Terminator"
+        }]
+    }
 }
 
 module.exports = Utils;
