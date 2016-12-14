@@ -2,9 +2,9 @@
 
 Tool to do contract testing from frontend perspective. 
 
-## Installatio
+## Installation
 
-`npm install dev-contract-test` or `yarn add dev-contract-test`
+`npm install dev-contract-test`
 
 ### Require the module
 
@@ -13,7 +13,7 @@ Tool to do contract testing from frontend perspective.
 ### Add confi`const config = {
  apis :[
       {
-        "url": "http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",
+        "url": "http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json",        
         "name": "Frozen"
       }
 }`
@@ -22,9 +22,13 @@ Tool to do contract testing from frontend perspective.
 
 `contract.validateContract(config);`
 
+### options
+
+Force to record the response, irrespective of time
+`contract.validateContract(config, true);`
+
 ## Why contract testing?
-aa
-With rise of popular Javascript frameworks like Angular, React, Ember and more. Single page applications work with REST backend over JSON. And there is always a chance that something time to time changed from backend, be it part of change in functionality, refactoring or any other reason. And when something is changed, contract between fronend and backend fails. Boo!
+With rise of popular Javascript frameworks like Angular, React, Ember and more. Single page applications work with REST backend over JSON. And there is always a chance that something time to time changed from backend, be it part of change in functionality, refactoring or any other reason. And when something is changed, contract between fronend and backend fails. Boom!
 
 Your applications is not working or some data is not displaying and you wonder WTF! I haven't changed anything, why the hell is not working?
 
@@ -36,16 +40,16 @@ As a front-end developer, your frontend app consumes JSON exposed by REST api. J
 But suddenly, for some reason the frontend app is behaving wierd. Data in your app/component is not rendering properly or not rendering at all. But you havn't changed a bit in your code.
 Is this due to something changed in api from backend?
 
-Here comes the contract-tester to rescue.
+dev-contract-tester is here to help.
 
 ## How does it works?
 
-contract tester works in 2 modes - 
+dev-contract-tester works in 2 modes - 
 
 1. Record - Records the JSON from backend api and saves it as physcial JSON file.
 2. Play - Compares the JSON saved (that worked fine) with the api now (that has something changed).
 
-In case of discrepancies, tool with throw error and notifies where mismatch is.
+In case of discrepancies, tool with throw error and notifies where the mismatch is.
 
 ## Example?
 
