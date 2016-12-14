@@ -1,6 +1,6 @@
 {
   "name": "dev-contract-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Contract test to make real http calls to backend, records and then plays it.",
   "main": "src/app.js",
   "scripts": {
