@@ -1,11 +1,18 @@
-# contract-tester
+# dev-contract-tester
 
-Tool to do contract testing from Front-end perspective. 
+Tool to do contract testing from frontend perspective. 
+
+## Installation
+
+`npm install dev-contract-test` or `yarn add dev-contract-test`
 
 ## Why contract testing?
+aa
+With rise of popular Javascript frameworks like Angular, React, Ember and more. Single page applications work with REST backend over JSON. And there is always a chance that something time to time changed from backend, be it part of change in functionality, refactoring or any other reason. And when something is changed, contract between fronend and backend fails. Boo!
 
-With rise of popular Javascript frameworks like Angular, React, Ember and more. Single page applications work with REST backend over JSON. 
-And there is always a chance that something time to time changed from backend, be it part of change in functionality, refactoring or any other reason.
+Your applications is not working or some data is not displaying and you wonder WTF! I haven't changed anything, why the hell is not working?
+
+Yay! dev-contract-test is here to rescue. Just install it, configure your endpoints and initialize it. 
  
 For example: 
 
